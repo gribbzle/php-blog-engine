@@ -1,0 +1,48 @@
+# Dependencies
+vendor/
+node_modules/
+composer.phar
+
+# Version control
+.git/
+.gitignore
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# IDE & Editor
+.idea/
+.vscode/
+*.swp
+*.swo
+*.sublime-*
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Storage
+storage/*
+!storage/.gitkeep
+
+# Compiled assets
+public/css/
+!public/css/.gitkeep
+
+# Docker
+docker/data/
+.dockerignore
+Docker
+
+# OS
+.DS_Store
+.AppleDouble
+.LSOverride
+*.tmp
+
+# Documentation
+docs/
+README.md
