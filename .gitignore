@@ -1,0 +1,32 @@
+# Dependencies
+vendor/
+
+# Environment
+.env
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Compiled SCSS
+public/css/*.css
+!public/css/.gitkeep
+
+# Storage
+storage/*
+!storage/.gitkeep
+
+# Docker
+docker/data/
+
+# Logs
+*.log
+
+# Composer
+composer.phar
