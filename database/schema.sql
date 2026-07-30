@@ -36,6 +36,8 @@ CREATE TABLE `article_category` (
     `article_id` INT NOT NULL,
     `category_id` INT NOT NULL,
     PRIMARY KEY (`article_id`, `category_id`),
+    INDEX `idx_category_id` (`category_id`),
+    INDEX `idx_category_article` (`category_id`, `article_id`),
     FOREIGN KEY (`article_id`) REFERENCES `articles`(`id`) ON DELETE CASCADE,
     FOREIGN KEY (`category_id`) REFERENCES `categories`(`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
