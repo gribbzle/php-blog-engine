@@ -49,16 +49,16 @@ foreach ($categoryNames as $name => $description) {
 echo "Created " . count($categoryIds) . " categories.\n";
 
 $imageUrls = [
-    'https://picsum.photos/seed/tech1/800/400',
-    'https://picsum.photos/seed/code1/800/400',
-    'https://picsum.photos/seed/design1/800/400',
-    'https://picsum.photos/seed/biz1/800/400',
-    'https://picsum.photos/seed/science1/800/400',
-    'https://picsum.photos/seed/edu1/800/400',
-    'https://picsum.photos/seed/health1/800/400',
-    'https://picsum.photos/seed/travel1/800/400',
-    'https://picsum.photos/seed/tech2/800/400',
-    'https://picsum.photos/seed/code2/800/400',
+    'https://loremflickr.com/800/400/technology',
+    'https://loremflickr.com/800/400/programming',
+    'https://loremflickr.com/800/400/design',
+    'https://loremflickr.com/800/400/business',
+    'https://loremflickr.com/800/400/science',
+    'https://loremflickr.com/800/400/education',
+    'https://loremflickr.com/800/400/health',
+    'https://loremflickr.com/800/400/travel',
+    'https://loremflickr.com/800/400/tech',
+    'https://loremflickr.com/800/400/code',
 ];
 
 $articleCount = 30;

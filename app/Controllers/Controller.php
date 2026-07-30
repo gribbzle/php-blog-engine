@@ -14,9 +14,9 @@ abstract class Controller
     {
         $this->smarty = new Smarty();
         $this->smarty->setTemplateDir([
-            'layouts' => __DIR__ . '/../../templates/layouts',
-            'pages' => __DIR__ . '/../../templates/pages',
-            'partials' => __DIR__ . '/../../templates/partials',
+            __DIR__ . '/../../templates/layouts',
+            __DIR__ . '/../../templates/pages',
+            __DIR__ . '/../../templates/partials',
         ]);
         $this->smarty->setCompileDir(__DIR__ . '/../../storage/templates_c');
         $this->smarty->setCacheDir(__DIR__ . '/../../storage/cache');
