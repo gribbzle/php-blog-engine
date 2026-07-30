@@ -13,7 +13,7 @@
                 <option value="date" {if $sort == 'date'}selected{/if}>По дате (новые)</option>
                 <option value="views" {if $sort == 'views'}selected{/if}>По просмотрам</option>
             </select>
-            <input type="hidden" name="page" value="{$page}">
+            <input type="hidden" name="page" value="{$page|escape}">
         </form>
     </div>
 

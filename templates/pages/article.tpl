@@ -27,7 +27,7 @@
     {/if}
 
     <div class="article-page__content">
-        {$article.content|nl2br}
+        {$article.content|escape|nl2br}
     </div>
 </article>
 
