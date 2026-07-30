@@ -17,6 +17,7 @@ Thumbs.db
 
 # Compiled SCSS
 public/css/*.css
+public/css/*.map
 !public/css/.gitkeep
 
 # Storage
