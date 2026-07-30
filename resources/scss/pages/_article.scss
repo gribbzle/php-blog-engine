@@ -80,12 +80,17 @@
 
 .article-page__image {
     width: 100%;
-    height: auto;
-    max-height: 400px;
-    object-fit: cover;
-    border-radius: $radius-lg;
     margin-bottom: $spacing-xl;
+    border-radius: $radius-lg;
     box-shadow: $shadow-md;
+    overflow: hidden;
+
+    img {
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+        border-radius: $radius-lg;
+    }
 }
 
 .article-page__excerpt {
@@ -174,6 +179,13 @@
     margin-top: $spacing-3xl;
     padding-top: $spacing-2xl;
     border-top: 1px solid $color-border-medium;
+    padding-left: $spacing-lg;
+    padding-right: $spacing-lg;
+
+    @include media-query(mobile) {
+        padding-left: $spacing-md;
+        padding-right: $spacing-md;
+    }
 }
 
 .related-articles__title {

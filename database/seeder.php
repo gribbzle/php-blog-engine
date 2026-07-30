@@ -54,11 +54,13 @@ $imageUrls = [
     'https://loremflickr.com/800/400/design',
     'https://loremflickr.com/800/400/business',
     'https://loremflickr.com/800/400/science',
-    'https://loremflickr.com/800/400/education',
+    'https://loremflickr.com/800/400/learning',
     'https://loremflickr.com/800/400/health',
     'https://loremflickr.com/800/400/travel',
     'https://loremflickr.com/800/400/tech',
     'https://loremflickr.com/800/400/code',
+    'https://loremflickr.com/800/400/nature',
+    'https://loremflickr.com/800/400/abstract',
 ];
 
 $articleCount = 30;

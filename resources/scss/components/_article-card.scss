@@ -79,24 +79,3 @@
         gap: $spacing-xs;
     }
 }
-
-@include media-query(tablet-up) {
-    .article-card {
-        flex-direction: row;
-        min-height: 160px;
-    }
-
-    .article-card__image-link {
-        width: 240px;
-        flex-shrink: 0;
-    }
-
-    .article-card__image {
-        height: 100%;
-        width: 100%;
-    }
-
-    .article-card__content {
-        padding: $spacing-md $spacing-lg;
-    }
-}
