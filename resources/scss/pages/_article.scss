@@ -1,0 +1,199 @@
+// Article Page
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.article-page {
+    @include container;
+    padding-top: $spacing-xl;
+    padding-bottom: $spacing-xl;
+}
+
+.article-page__header {
+    margin-bottom: $spacing-xl;
+    text-align: center;
+
+    @include media-query(md) {
+        text-align: left;
+    }
+}
+
+.article-page__title {
+    font-size: $font-size-2xl;
+    font-weight: $font-weight-bold;
+    color: $color-text-primary;
+    line-height: 1.2;
+    margin-bottom: $spacing-md;
+
+    @include media-query(md) {
+        font-size: $font-size-3xl;
+    }
+
+    @include media-query(lg) {
+        font-size: $font-size-4xl;
+    }
+}
+
+.article-page__meta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: $spacing-md $spacing-lg;
+    font-size: $font-size-sm;
+    color: $color-text-muted;
+}
+
+.article-page__date {
+    white-space: nowrap;
+}
+
+.article-page__views {
+    display: inline-flex;
+    align-items: center;
+    gap: $spacing-xs;
+}
+
+.article-page__categories {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: $spacing-sm;
+    margin-top: $spacing-sm;
+}
+
+.article-page__category {
+    display: inline-flex;
+    align-items: center;
+    padding: $spacing-xs $spacing-sm;
+    font-size: $font-size-xs;
+    font-weight: $font-weight-medium;
+    color: $color-primary;
+    background: rgba($color-primary, 0.1);
+    border-radius: $radius-full;
+    transition: all $transition-fast;
+
+    &:hover {
+        background: $color-primary;
+        color: $color-white;
+    }
+}
+
+.article-page__image {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: $radius-lg;
+    margin-bottom: $spacing-xl;
+    box-shadow: $shadow-md;
+}
+
+.article-page__excerpt {
+    font-size: $font-size-lg;
+    line-height: $line-height-relaxed;
+    color: $color-text-secondary;
+    padding: $spacing-lg;
+    background: $color-bg-secondary;
+    border-left: 4px solid $color-primary;
+    border-radius: 0 $radius-md $radius-md 0;
+    margin-bottom: $spacing-xl;
+}
+
+.article-page__content {
+    font-size: $font-size-base;
+    line-height: $line-height-relaxed;
+    color: $color-text-primary;
+
+    p {
+        margin-bottom: $spacing-lg;
+    }
+
+    h2 {
+        margin: $spacing-2xl 0 $spacing-md;
+        padding-top: $spacing-lg;
+        border-top: 1px solid $color-border-light;
+    }
+
+    h3 {
+        margin: $spacing-xl 0 $spacing-sm;
+    }
+
+    ul, ol {
+        margin: $spacing-lg 0;
+        padding-left: $spacing-xl;
+    }
+
+    li {
+        margin-bottom: $spacing-sm;
+    }
+
+    a {
+        color: $color-primary;
+        text-decoration: underline;
+        text-underline-offset: 2px;
+
+        &:hover {
+            color: $color-primary-dark;
+        }
+    }
+
+    blockquote {
+        margin: $spacing-xl 0;
+        padding: $spacing-md $spacing-lg;
+        border-left: 4px solid $color-primary;
+        background: $color-bg-secondary;
+        font-style: italic;
+        color: $color-text-secondary;
+    }
+
+    code {
+        font-family: $font-family-mono;
+        font-size: 0.9em;
+        padding: 0.125em 0.375em;
+        background: $color-bg-secondary;
+        border-radius: $radius-sm;
+    }
+
+    pre {
+        margin: $spacing-lg 0;
+        padding: $spacing-lg;
+        background: $color-gray-900;
+        border-radius: $radius-md;
+        overflow-x: auto;
+
+        code {
+            background: none;
+            padding: 0;
+            color: $color-gray-100;
+            font-size: $font-size-sm;
+        }
+    }
+}
+
+.related-articles {
+    margin-top: $spacing-3xl;
+    padding-top: $spacing-2xl;
+    border-top: 1px solid $color-border-medium;
+}
+
+.related-articles__title {
+    font-size: $font-size-xl;
+    font-weight: $font-weight-semibold;
+    color: $color-text-primary;
+    margin-bottom: $spacing-lg;
+    text-align: center;
+}
+
+.related-articles__grid {
+    display: grid;
+    gap: $spacing-lg;
+    grid-template-columns: 1fr;
+
+    @include media-query(md) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include media-query(lg) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

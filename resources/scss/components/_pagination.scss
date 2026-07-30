@@ -1,0 +1,55 @@
+// Pagination Component
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: $spacing-xs;
+    margin-top: $spacing-xl;
+    flex-wrap: wrap;
+
+    &__link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 40px;
+        height: 40px;
+        padding: 0 $spacing-sm;
+        font-size: $font-size-sm;
+        font-weight: 500;
+        color: $color-primary;
+        background: $color-white;
+        border: 1px solid $color-border-medium;
+        border-radius: 4px;
+        transition: all $transition-fast;
+
+        &:hover:not(.pagination__link--current) {
+            background: $color-primary;
+            border-color: $color-primary;
+            color: $color-white;
+            text-decoration: none;
+        }
+    }
+
+    &__link--current {
+        background: $color-primary;
+        border-color: $color-primary;
+        color: $color-white;
+        cursor: default;
+    }
+
+    &__ellipsis {
+        color: $color-text-muted;
+        padding: 0 $spacing-xs;
+    }
+}
+
+@include media-query(sm) {
+    .pagination__link {
+        min-width: 36px;
+        height: 36px;
+        font-size: $font-size-sm;
+    }
+}

@@ -1,0 +1,22 @@
+// Container Layout
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.main-container {
+    @include container;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.main {
+    flex: 1;
+    width: 100%;
+    padding: $spacing-xl $spacing-lg;
+}
+
+@include media-query(mobile) {
+    .main {
+        padding: $spacing-lg $spacing-md;
+    }
+}

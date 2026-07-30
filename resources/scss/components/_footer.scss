@@ -1,0 +1,35 @@
+// Footer Component
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.footer {
+    background: $color-primary;
+    color: $color-white;
+    margin-top: auto;
+}
+
+.footer__inner {
+    @include container;
+    padding: $spacing-xl $spacing-lg;
+    text-align: center;
+}
+
+.footer__copyright {
+    font-size: $font-size-sm;
+    opacity: 0.8;
+
+    @include media-query(md) {
+        font-size: $font-size-base;
+    }
+}
+
+.footer__link {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    transition: opacity $transition-fast;
+
+    &:hover {
+        opacity: 0.7;
+    }
+}

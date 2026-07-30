@@ -1,0 +1,65 @@
+// 404 Page
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.error-page {
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: $spacing-2xl $spacing-lg;
+}
+
+.error-page__code {
+    font-size: 12rem;
+    font-weight: $font-weight-bold;
+    color: $color-primary;
+    line-height: 1;
+    margin-bottom: $spacing-md;
+    opacity: 0.9;
+
+    @include media-query(md) {
+        font-size: 16rem;
+    }
+}
+
+.error-page__title {
+    font-size: $font-size-2xl;
+    font-weight: $font-weight-semibold;
+    color: $color-text-primary;
+    margin-bottom: $spacing-sm;
+
+    @include media-query(md) {
+        font-size: $font-size-3xl;
+    }
+}
+
+.error-page__message {
+    font-size: $font-size-lg;
+    color: $color-text-secondary;
+    margin-bottom: $spacing-xl;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.error-page__link {
+    display: inline-flex;
+    align-items: center;
+    gap: $spacing-sm;
+    padding: $spacing-md $spacing-xl;
+    font-size: $font-size-base;
+    font-weight: $font-weight-medium;
+    color: $color-white;
+    background: $color-primary;
+    border-radius: $radius-md;
+    transition: all $transition-fast;
+
+    &:hover {
+        background: $color-primary-dark;
+        transform: translateY(-2px);
+        box-shadow: $shadow-md;
+        color: $color-white;
+    }
+}

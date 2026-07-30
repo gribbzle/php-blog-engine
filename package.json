@@ -1,0 +1,27 @@
+{
+  "name": "php-blog-engine",
+  "version": "1.0.0",
+  "description": "A simple but fully functional blog application built with **pure PHP**, **MySQL**, and **Smarty Template Engine**.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gribbzle/php-blog-engine.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/gribbzle/php-blog-engine/issues"
+  },
+  "homepage": "https://github.com/gribbzle/php-blog-engine#readme",
+  "devDependencies": {
+    "sass": "^1.102.0"
+  }
+}

@@ -1,0 +1,67 @@
+// Header Component
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.header {
+    background: $color-white;
+    border-bottom: 1px solid $color-border-light;
+    position: sticky;
+    top: 0;
+    z-index: $z-index-sticky;
+}
+
+.header__inner {
+    @include container;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: $spacing-md $spacing-lg;
+    gap: $spacing-lg;
+}
+
+.header__logo {
+    font-size: $font-size-xl;
+    font-weight: $font-weight-bold;
+    color: $color-primary;
+    text-decoration: none;
+    transition: color $transition-fast;
+
+    &:hover {
+        color: $color-primary-dark;
+    }
+}
+
+.header__nav {
+    display: flex;
+    align-items: center;
+    gap: $spacing-lg;
+}
+
+.header__link {
+    font-size: $font-size-sm;
+    font-weight: $font-weight-medium;
+    color: $color-text-secondary;
+    padding: $spacing-xs $spacing-sm;
+    border-radius: $radius-sm;
+    transition: all $transition-fast;
+
+    &:hover {
+        color: $color-primary;
+        background: rgba($color-primary, 0.1);
+    }
+}
+
+@include media-query(mobile) {
+    .header__inner {
+        padding: $spacing-sm $spacing-md;
+    }
+
+    .header__logo {
+        font-size: $font-size-lg;
+    }
+
+    .header__link {
+        padding: $spacing-xs $spacing-sm;
+        font-size: $font-size-xs;
+    }
+}

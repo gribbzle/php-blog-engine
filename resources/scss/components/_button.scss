@@ -1,0 +1,90 @@
+// Button Component
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+@use 'sass:color' as c;
+
+.btn {
+    @include button-base;
+
+    &--primary {
+        background: $color-primary;
+        color: $color-white;
+        border-color: $color-primary;
+
+        &:hover {
+            background: $color-primary-light;
+            border-color: $color-primary-light;
+        }
+    }
+
+    &--secondary {
+        background: $color-secondary;
+        color: $color-white;
+        border-color: $color-secondary;
+
+        &:hover {
+            background: c.adjust($color-secondary, $lightness: -10%);
+            border-color: c.adjust($color-secondary, $lightness: -10%);
+        }
+    }
+
+    &--outline {
+        background: transparent;
+        color: $color-primary;
+        border-color: $color-primary;
+
+        &:hover {
+            background: $color-primary;
+            color: $color-white;
+        }
+    }
+
+    &--ghost {
+        background: transparent;
+        color: $color-text-primary;
+        border-color: transparent;
+
+        &:hover {
+            background: $color-border-light;
+        }
+    }
+
+    &--sm {
+        padding: $spacing-xs $spacing-sm;
+        font-size: $font-size-sm;
+    }
+
+    &--lg {
+        padding: $spacing-md $spacing-xl;
+        font-size: $font-size-lg;
+    }
+
+    &--block {
+        width: 100%;
+    }
+
+    &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+}
+
+// Link button (for "View all" links)
+.link-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: $spacing-xs;
+    color: $color-accent;
+    font-weight: 500;
+    transition: color $transition-fast;
+
+    &:hover {
+        color: c.adjust($color-accent, $lightness: -15%);
+        text-decoration: underline;
+    }
+
+    svg {
+        width: 16px;
+        height: 16px;
+    }
+}

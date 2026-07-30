@@ -1,0 +1,124 @@
+// Mixins
+@use 'variables' as *;
+
+// Media Queries (mobile-first)
+@mixin media-query($breakpoint) {
+    @if $breakpoint == mobile-only {
+        @media (max-width: #{$bp-sm - 1px}) { @content; }
+    } @else if $breakpoint == tablet-up {
+        @media (min-width: #{$bp-md}) { @content; }
+    } @else if $breakpoint == desktop-up {
+        @media (min-width: #{$bp-lg}) { @content; }
+    } @else if $breakpoint == wide-up {
+        @media (min-width: #{$bp-xl}) { @content; }
+    } @else if $breakpoint == sm {
+        @media (min-width: #{$bp-sm}) { @content; }
+    } @else if $breakpoint == md {
+        @media (min-width: #{$bp-md}) { @content; }
+    } @else if $breakpoint == lg {
+        @media (min-width: #{$bp-lg}) { @content; }
+    } @else if $breakpoint == xl {
+        @media (min-width: #{$bp-xl}) { @content; }
+    } @else if $breakpoint == 2xl {
+        @media (min-width: #{$bp-2xl}) { @content; }
+    }
+}
+
+// Container
+@mixin container {
+    width: 100%;
+    max-width: $container-max;
+    margin: 0 auto;
+    padding: 0 $spacing-lg;
+}
+
+// Flexbox utilities
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin flex-between {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@mixin flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+// Grid utility
+@mixin grid($columns: 1) {
+    display: grid;
+    gap: $spacing-lg;
+    grid-template-columns: repeat($columns, 1fr);
+}
+
+// Text truncation
+@mixin text-truncate($lines: 1) {
+    overflow: hidden;
+    @if $lines == 1 {
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    } @else {
+        display: -webkit-box;
+        -webkit-line-clamp: $lines;
+        -webkit-box-orient: vertical;
+    }
+}
+
+// Visually hidden (accessibility)
+@mixin visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+// Button base
+@mixin button-base {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: $spacing-sm;
+    padding: $spacing-sm $spacing-lg;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-medium;
+    line-height: 1.5;
+    text-decoration: none;
+    border: 1px solid transparent;
+    border-radius: $radius-md;
+    cursor: pointer;
+    transition: all $transition-fast;
+    font-family: $font-family-base;
+}
+
+// Card hover effect
+@mixin card-hover {
+    transition: transform $transition-base, box-shadow $transition-base;
+    &:hover {
+        transform: translateY(-4px);
+        box-shadow: $shadow-lg;
+    }
+}
+
+// Focus visible
+@mixin focus-visible {
+    &:focus-visible {
+        outline: 2px solid $color-border-focus;
+        outline-offset: 2px;
+    }
+}
+
+// Visually hidden for screen readers
+.visually-hidden {
+    @include visually-hidden;
+}

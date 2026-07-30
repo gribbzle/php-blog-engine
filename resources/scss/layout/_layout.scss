@@ -1,0 +1,35 @@
+// Layout Components
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+// Container
+.container {
+    @include container;
+}
+
+// Main layout
+.main {
+    flex: 1;
+    width: 100%;
+}
+
+// Grid utilities
+.grid {
+    display: grid;
+    gap: $spacing-lg;
+}
+
+@include media-query(md) {
+    .grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
+    .grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
+    .grid-cols-4 { grid-template-columns: repeat(4, 1fr); }
+}
+
+// Section spacing
+.section {
+    padding: $spacing-xl 0;
+}
+
+.section--sm { padding: $spacing-md 0; }
+.section--lg { padding: $spacing-2xl 0; }
+.section--xl { padding: $spacing-3xl 0; }
